@@ -57,7 +57,7 @@ fr:
   minprice: Precio Minimo 
   maxprice: Precio Maximo
   searchbtn: Busqueda
-  searchservices: BUSQUEDA
+  searchservices: GENERAR REPORTE
   add_service: Agregar un Servicio
   servicestitle_html: <h2 style="font-family:Arial">Formularios de Informes Mensuales a Secretaria de Salud</h2>
   listed_by: Posteado por %{user}
@@ -71,7 +71,7 @@ fr:
   privacy_html: <h2 style="font-family:Arial"><strong>POLITICA DE PRIVACIDAD</strong></h2>
   jumbotron_residentialtitle_html: <h2>Registro de Pacientes ATA-2005</h2>
   jumbotron_commercialtitle_html: <h2>Registro de Medicamentos</h2>
-  architect_html: <h3 class="panel-title">NATACION</h3>
+  architect_html: <h3 class="panel-title">ATENCIONES AMBULATORIAS</h3>
   airconditioner_html: <h3 class="panel-title">AIRE ACONDICIONADO / VENTILACION</h3>
   asphalt_html: <h3 class="panel-title">EMPRESAS DE ASFALTO</h3>
   banks_html:  <h3 class="panel-title">BANCOS</h3>
