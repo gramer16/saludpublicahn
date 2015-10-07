@@ -1,0 +1,147 @@
+
+<%= form_for(@commercialpropertiesforsale, :html => { :multipart => true }) do |f| %>
+  <% if @commercialpropertiesforsale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@commercialpropertiesforsale.errors.count, "error") %> prohibited this commercialpropertiesforsale from being saved:</h2>
+
+      <ul>
+      <% @commercialpropertiesforsale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <div class="thumbnail">
+  
+ <div class="row">
+  <div class="left">
+    <div class="col-md-4">
+   <%= label_tag :Cual_es_su_Religion? %><br>
+   <%= f.select :mls_number, options_for_select([["Choose Religion", "Choose"],["Cristiana", "Cristiana"],["Catolica","Catolica"],["Otra","Otra"]]), class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :Soy_Hombre_o_Mujer? %><br>
+    <%= f.select :action, options_for_select([["Choose Option", "Choose"],["Mujer", "Sale"],["Hombre","Lease"]]), class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :Buscando_Hombre_o_Mujer? %><br>
+    <%= f.select :property_type, options_for_select([["Choose Option", "Choose"],["Mujer", "Sale"],["Hombre","Lease"]]), class: "form-control" %><br>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <%= label_tag :pais %><br>
+     <%= f.select :city, options_for_select([["Choose Country", "Choose"],["Mexico", "Mexico"],["Guatemala","Guatemala"],["Honduras","Honduras"],["Nicaragua","Nicaragua"],["El Salvador","Salvador"],["Costa Rica","CostaRica"],["Panama","Panama"],["Colombia","Colombia"],["Canada","Canada"],["United States","USA"],["Venezuela","Venezuela"],["Argentina","Argentina"],["Chile","Chile"],["Ecuador","Ecuador"],["Uruguay","Uruguay"],["Brazil","Brazil"],["Espana","Espana"],["Reino Unido","UK"],["Irlanda","Irlanda"]]), class: "form-control" %><br>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <%= label_tag :frase_romantica_favorita%><br>
+    <%= f.text_area :address, class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :edad %><br>
+    <%= f.number_field :zipcode, class: "form-control" %><br>
+  </div>
+  
+  <div class="col-md-4">
+    <%= label_tag :price %><br>
+    <%= f.text_field :price, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= label_tag :real_estate_company_name %><br>
+    <%= f.text_field :realestatecompany, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= label_tag :office_phone %><br>
+    <%= f.text_field :officephone, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= label_tag :company_website %><br>
+    <%= f.text_field :companywebsite, class: "form-control" %><br>
+  </div>
+
+    <div class="col-md-4">
+   <%= label_tag :listing_agent_name %><br>
+    <%= f.text_field :listingagent, class: "form-control" %><br>
+    </div>
+     <div class="col-md-4">
+   <%= label_tag :email %><br>
+    <%= f.text_field :emailagent, class: "form-control" %><br>
+    </div>
+     <div class="col-md-4">
+    <%= label_tag :agent_phone %><br>
+    <%= f.text_field :agentphone, class: "form-control" %><br>
+    </div>
+      <div class="col-md-4">
+    <%= label_tag :asset_class %><br>
+    <%= f.text_field :assetclass, class: "form-control" %><br>
+    </div>
+    <div class="col-md-4">
+    <%= label_tag :total_Sqft_building %><br>
+    <%= f.number_field :totalbuildingSF, class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :total_units %><br>
+    <%= f.number_field :totalunits, class: "form-control" %><br>
+  </div>
+ <div class="col-md-4">
+    <%= label_tag :cap_rate %><br>
+    <%= f.text_field :cap_rate, class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :number_of_floors %><br>
+    <%= f.number_field :floorsnumber, class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= f.label :Type_of_Construction %><br>
+    <%= f.select :construction_type, options_for_select([["New Construction", "New Construction"],["Renovated","Renovated"],["Needs Renovations", "Needs Renovations"]]), class: "form-control" %><br>
+  </div>
+  
+ <div class="col-md-4">
+    <%= f.label :property_description %><br>
+    <%= f.text_area :property_description, class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :total_of_parking %><br>
+    <%= f.number_field :parking_total, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= label_tag :elevators %><br>
+    <%= f.text_field :elevators, class: "form-control" %><br>
+  </div>
+  <div class="col-md-4">
+    <%= label_tag :Suite_sqft %><br>
+    <%= f.number_field :individual_suiteSQF, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= f.label :year_completed %><br>
+    <%= f.number_field :year_completed, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= label_tag :lot_sqft %><br>
+    <%= f.number_field :lotsqft, class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= f.label :status %><br>
+    <%= f.select :status, options_for_select([["Any Status", "Any Status"],["Active","Active"],["Pending", "Pending"],["Pending Continue to Show", "Pending Continue to Show"],["Sold", "Sold"]]), class: "form-control" %><br>
+  </div>
+  
+  <div class="col-md-4">
+    <%= label_tag :florida_area %><br>
+    <%= f.select :floridarea, options_for_select([["North Florida", "North_Florida"],["Central Florida","Central_Florida"],["South Florida", "South_Florida"]]), class: "form-control" %><br><br>
+  </div>
+  
+  <br>
+  <div class="col-md-4">
+    <%= f.label :Fotos_de_perfil %>  <%= f.file_field :image, class: "form-control" %><br><br>
+  </div>
+
+  <div class="col-md-4">
+    <%= f.submit "Crear Perfil", class: "btn btn-danger"  %><br>
+  </div>
+  </div>
+</div>
+  <br>
+<% end %>
+</div>
+

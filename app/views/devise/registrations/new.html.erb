@@ -1,0 +1,64 @@
+<div class="jumbotron">
+  <div class="left">
+    <h2>Registrarse al Sistema de Empleados Salud de Honduras</h2>
+  </div>
+</div>
+<br>
+<br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="left">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :nombre_empleado %>
+            <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.label :email_empleado %>
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.label :contrasena %>
+            <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i>
+            <% end %><br/>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.label :confirmacion_contrasena %><br/>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+           Es usted Empleado Administrativo de la Secretaria de Salud o Mancomunidad? <%= f.check_box :isRealtor %><br/>
+            <br/>
+            <%= f.label :licenseId, "Codigo de Empleado:" %><br/>
+            <%= f.text_field :licenseId, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="left">
+      <div class="form-group">
+        <%= f.submit "Sign up", class: "btn btn-primary" %>
+      </div>
+    </div>
+<% end %>
+<div class="left">
+  <%= render "devise/shared/links" %>
+</div>

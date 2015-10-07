@@ -1,0 +1,71 @@
+  <div class="left">
+     <%= t('searchresidential_html') %>
+   <%= form_tag search_residentials_path, method: :get do %>
+          <p>
+        <%= text_field :search, params[:search], placeholder: t('searchtextbox'),class: "form-control" %><br>
+    
+<br>
+ <%= submit_tag t('searchbtn'), name: nil ,class: "btn btn-primary" %>
+      </p>
+</div>
+      <% end %>
+      <br>
+      <br>
+      <p>
+
+    <div class="jumbotron">
+  <div class="left">
+    <%= t('jumbotron_residentialtitle_html') %>
+  
+ </div>
+ </div>            
+ 
+<div class="center"> 
+<div class="row">
+  <% @residentials.each do |residential| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(residential.image.url), residential %>
+      <div class="caption">
+        <h3><strong><%= residential.address %></strong></h3>
+          <h4><strong><th><th><%= label_tag :nil, t('price') %> </th> <%= number_to_currency(residential.price) %></strong></h4>
+          <p>   <p><%= t('listed_by', user: residential.user.name) %></p>
+            <%= residential.property_type %><br>
+            <th><%= label_tag :nil, t('bedrooms') %></th>   <%= residential.bedrooms %><br>
+            <th><%= label_tag :nil, t('fullbathrooms') %></th>   <%= residential.full_bathrooms %><br>
+            <th><%= label_tag :nil, t('halfbathrooms') %></th>   <%= residential.half_bathrooms %><br>
+            <th><%= label_tag :nil, t('squarefeet') %></th> <%= residential.square_feet %><br>
+            <th><%= label_tag :nil, t('zipcode') %></th>    <%= residential.zip_code %><br>
+             <th><%= label_tag :nil, t('construction') %></th> <%= residential.construction_type %><br>
+             <th><%= label_tag :nil, t('city') %></th> <%= residential.city %><br>
+            <th><%= label_tag :nil, t('privatepool') %></th>    <%= residential.private_pool %><br>
+            <th><%= label_tag :nil, t('waterview') %></th> <%= residential.water_view %><br>
+            <th><%= label_tag :nil, t('golf') %></th> <%= residential.golf_course %><br>
+            <th><%= label_tag :nil, t('water') %></th> <%= residential.water_front %><br>
+           
+            <th><%= label_tag :Status, t('status') %></th> <%= residential.status %><br>
+
+          </p>
+          <%= link_to 'Show', residential, class: "btn btn-success" %>
+          <% if (user_signed_in?) && (current_user == residential.user) %>
+          <%= link_to 'Edit', edit_residential_path(residential), class: "btn btn-warning" %>
+          <%= link_to 'Delete', residential, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+           <% end %>
+ </div>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>
+</div>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to t('new_residential'), new_residential_path, class: "btn btn-success" %>
+<% end %>
+<br>
+
+<!--<h1>Listing residentials</h1>-->
+
+
