@@ -1,183 +1,123 @@
-
-
 <div class="row">
   <div class="col-md-6">
     <div class="thumbnail">
       <%= image_tag @residential.image.url %>
       <br>
-      <strong>Property Features:</strong>  
+      <strong>DIAGNOSTICO O ACTIVIDAD / CONDICION DEL PACIENTE:</strong><br>  
       <%= @residential.additionalfeatures %>
       <br>
       <br>
-      <h5><strong>School Information</strong></h5>
       <br>
       </div>
 
       <br>
   </div>
   <div class="col-md-6">
-    <h4><strong>General Description</strong></h4>
-    <h5><strong><%= @residential.address %></strong></h5>
-    <h5> <strong>Listing Price:</strong> <%= number_to_currency(@residential.price) %></h5>
-    <div class ="col-md-6">
-     <strong>Status:</strong>  
-     <%= @residential.status %>
+    <h4><strong>INFORMACION GENERAL DEL PACIENTE</strong></h4><br>
+    <strong>NOMBRES Y APELLIDOS:</strong> 
+    <h4><strong><%= @residential.construction_type %></strong></h4>
+    <div class ="col-md-12">
+     <strong>NUMERO DE INDENTIDAD DEL PACIENTE:</strong>  
+     <%= @residential.mls_number %><br>
+   </div><br>
+    <div class ="col-md-12">
+     <strong>SEXO DEL PACIENTE</strong>  
+     <%= @residential.action %><br>
    </div>
-    <div class ="col-md-6">
-     <strong>City:</strong>  
-    <%= @residential.city %>
+   <br>
+    <div class ="col-md-12">
+     <strong>FECHA DE NACIMIENTO:</strong>  
+     <%= @residential.green_certification %><br>
   </div>
-   <div class ="col-md-6">
-    <strong>Zip code:</strong>  
-    <%= @residential.zip_code %>
+   <div class ="col-md-12">
+    <strong>EDAD EN ANOS:</strong>  
+     <%= @residential.half_bathrooms %><br>
   </div>
-   <div class ="col-md-6">
-    <strong>Property type:</strong>  
-   <%= @residential.property_type %>
+   <div class ="col-md-12">
+    <strong>EDAD EN MESES</strong>  
+  <%= @residential.square_feet %><br>
  </div>
-  <div class ="col-md-6">
-   <strong>Bedrooms:</strong> 
-  <%= @residential.bedrooms %>
+  <div class ="col-md-12">
+   <strong>EDAD EN DIAS</strong> 
+ <%= @residential.lot_size %><br>
 </div>
- <div class ="col-md-6">
-  <strong>Full bathrooms:</strong> 
-  <%= @residential.full_bathrooms %>
+ <div class ="col-md-12">
+  <strong>PACIENTE</strong> 
+  <%= @residential.zip_code %><br>
 </div>
- <div class ="col-md-6">
-  <strong>Half bathrooms:</strong> 
-  <%= @residential.half_bathrooms %>
+ <div class ="col-md-12">
+  <strong>PROCEDENCIA DEPARTAMENTO</strong> 
+<%= @residential.area_tennis %><br>
 </div>
- <div class ="col-md-6">
-  <strong>Square feet:</strong>  
-  <%= @residential.square_feet %>
+ <div class ="col-md-12">
+  <strong>PROCEDENCIA MUNICIPIO</strong>  
+   <%= @residential.wheelchair %><br>
 </div>
- <div class ="col-md-6">
-  <strong>Lot size:</strong>  
-   <%= @residential.lot_size %>
+ <div class ="col-md-12">
+  <strong>PROCEDENCIA LOCALIDAD</strong>  
+    <%= @residential.city %><br><br><br>
  </div>
-  <div class ="col-md-6">
-   <strong>Garage:</strong>  
-  <%= @residential.garage %>
-</div>
- <div class ="col-md-6">
-  <strong>Stories:</strong>  
-  <%= @residential.stories %>
-</div>
- <div class ="col-md-6">
-  <strong>Year built:</strong>  
-  <%= @residential.year_built %>
-</div>
- <div class ="col-md-6">
-  <strong>Construction type:</strong>  
-  <%= @residential.construction_type %>
-</div>
- <div class ="col-md-6">
-  <strong>Maintenance Fee:</strong>  
-  <%= @residential.maintenancefee %>
-</div>
- <div class ="col-md-6">
-  <strong>Key Map:</strong>  
-  <%= @residential.keymap %>
-</div>
- <div class ="col-md-6">
-   <strong>For Sale / Rent:</strong> 
-  <%= @residential.action %>
-</div>
- <div class ="col-md-6">
-   <strong>Mls number:</strong>  
-  <%= @residential.mls_number %> 
-</div>
-<div class ="col-md-6">
-  <strong>Is a Foreclosure?:</strong>  
-  <%= @residential.foreclosure %>
-</div>
 </div>
  <br>
 <br>
+<br>
 <div class ="col-md-6">
- <h4><strong>Exterior Features</strong></h4>
- <div class ="col-md-6">
-      <strong>Private pool:</strong>  
-      <%= @residential.private_pool %>
-   </div>
-   <div class ="col-md-6">
-      <strong>Area tennis:</strong>  
-    <%= @residential.area_tennis %>
-   </div>
-   <div class ="col-md-6">
-      <strong>Wheelchair:</strong>  
-      <%= @residential.wheelchair %>
-   </div>
-   <div class ="col-md-6">
-  <strong>Patio deck:</strong>  
-  <%= @residential.patio_deck %>
+  <strong>INFORMACION ADICIONAL DEL PACIENTE</strong><br>
+  <br>  
+  <div class ="col-md-12">
+   <strong>DIAGNOSTICO O ACTIVIDAD 1</strong>  
+  <%= @residential.address %>
+  <br>
 </div>
-<div class ="col-md-6">
-  <strong>Golf course:</strong> 
-  <%= @residential.golf_course %>
+<br>
+ <div class ="col-md-12">
+  <strong>DIAGNOSTICO O ACTIVIDAD 3</strong>  
+ <%= @residential.energy_features %><br>
+</div><br>
+ <div class ="col-md-12">
+  <strong>REFERENCIA ENVIADA A:</strong>  
+   <%= @residential.keymap %><br>
+</div><br>
+ <div class ="col-md-12">
+  <strong>REFERENCIA RECIBIDA DE:</strong>  
+   <%= @residential.elevator %><br>
 </div>
-<div class ="col-md-6">
-  <strong>Water view:</strong>  
-  <%= @residential.water_view %>
+ <div class ="col-md-12">
+  <strong>ESTABLECIMIENTO</strong>  
+  <%= @residential.realtoremail %><br>
 </div>
-<div class ="col-md-6">
-  <strong>Water front:</strong>  
-  <%= @residential.water_front %>
+ <div class ="col-md-12">
+  <strong>PROFESIONAL DE SALUD</strong>  
+  <%= @residential.realtorname %><br>
+</div>
+ <div class ="col-md-12">
+   <strong>CODIGO</strong> 
+  <%= @residential.full_bathrooms %><br>
+</div>
+ <div class ="col-md-12">
+   <strong>NOMBRE DEL PERSONAL DE SALUD</strong>  
+  <%= @residential.realorlicense %><br> 
+</div>
+<div class ="col-md-12">
+  <strong>SERVICIO DE ATENCION:</strong>  
+  <%= @residential.property_type %><br>
 </div>
 </div>
 <br>
 <br>
-<div class ="col-md-6">
- <h4><strong>Interior Features</strong></h4>
- <div class ="col-md-6">
-  <strong>Elevator:</strong>  
-  <%= @residential.elevator %>
-</div>
-</div>
-<br>
-<br>
-<div class ="col-md-6">
-<h4><strong>Energy Features</strong></h4>
- <div class ="col-md-6">
-  <strong>Energy:</strong>  
-  <%= @residential.energy_features %>
-</div>
-<div class ="col-md-6">
-  <strong>Green certification:</strong>  
-  <%= @residential.green_certification %>
-</div>
-</div>
-<br>
-<br>
-<div class ="col-md-6">
-<h4><strong>Realtor or Broker Contact Information</strong></h4>
-<div class ="col-md-6">
-  <strong>Realtor Name:</strong>  
-  <%= @residential.realtorname %>
-</div>
-  <div class ="col-md-6">
-  <strong>Phone:</strong>  
-  <%= @residential.realtorphonenumber %>
-</div>
-<div class ="col-md-6">
-  <strong>Email:</strong>  
-  <%= @residential.realtoremail %>
-</div>
-</div>
-</div>
-</div>
+
     <br>
     <br>
    <div class ="col-md-12">
     <div class= "center">
-   <strong>Map View Location:</strong><br>
+   <strong>VISTA PREVIA DEL MAPA DE LA LOCALIDAD DEL PACIENTE</strong><br>
    <br>
 <iframe
   width="800"
   height="450"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAUOQ0h7ZYU56FuY9ziMMXURoIlHxC3pfY
-    &q=<%= @residential.address.parameterize %>">
+    &q=<%= @residential.area_tennis.parameterize %>">
 </iframe>
 </div>
 </div>
@@ -191,5 +131,6 @@
 <% if current_user == @residential.user %>
 <%= link_to 'Edit', edit_residential_path(@residential), class: "btn btn-link" %> |
 <% end %>
-<%= link_to 'Back', residentials_path, class: "btn btn-link" %>
+<%= link_to 'Back', residentials_path, class: "btn btn-link" %><br>
+
 

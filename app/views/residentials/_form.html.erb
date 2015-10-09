@@ -15,15 +15,7 @@
 <div class="thumbnail">
   <div class="row">
     <div class="left">
-      <div class="col-md-4">
-    <%= label_tag :Numero_de_Identidad_del_Paciente %><br>
-    <%= f.text_field :mls_number, class: "form-control"  %><br>
-  </div>
   <div class="col-md-4">
-    <%= f.label :profesional_de_salud %><br>
-    <%= f.text_field :realtorname, class: "form-control" %><br>
-  </div>
-   <div class="col-md-4">
     <%= f.label :Numero_Historia_Clinica %><br>
     <%= f.number_field :bedrooms, class: "form-control" %><br>
   </div>
@@ -32,122 +24,113 @@
     <%= f.text_field :construction_type, class: "form-control" %><br>
   </div>
   <div class="col-md-4">
-    <%= f.label :codigo %><br>
-    <%= f.number_field :full_bathrooms, class: "form-control" %><br>
+    <%= label_tag :Numero_de_Identidad_del_Paciente %><br>
+    <%= f.text_field :mls_number, class: "form-control"  %><br>
   </div>
   <div class="col-md-4">
-    <%= label_tag :nombre_personal_de_salud %><br>
-    <%= f.text_field :realorlicense, class: "form-control" %><br>
+    <%= label_tag :sexo_del_paciente %><br><br>
+    <%= f.select :action, options_for_select([["Elegir Sexo", "Elegir Sexo"],["Hombre", "Hombre"],["Mujer","Mujer"]]), class: "form-control" %><br>
+  </div>
+   <div class="col-md-4">
+    <%= f.label :fecha_de_nacimiento %><br><br>
+    <%= f.date_field :green_certification, class: "form-control" %><br>
   </div>
   <div class="col-md-4">
     <%= f.label :nil, "EDAD" %><br>
     <%= f.label :anos %><br>
     <%= f.number_field :half_bathrooms, class: "form-control" %><br>
-  </div>
+  </div><br>
   <div class="col-md-4">
     <%= f.label :nil, "EDAD" %><br>
     <%= f.label :meses%><br>
     <%= f.number_field :square_feet, class: "form-control" %><br>
-  </div>
+  </div><br>
   <div class="col-md-4">
     <%= f.label :nil, "EDAD" %><br>
     <%= f.label :dias %><br>
     <%= f.number_field :lot_size, class: "form-control" %><br>
-  </div>
+  </div><br><br>
   <div class="col-md-4">
-    <%= f.label :paciente %><br>
-    <%= f.number_field :zip_code, class: "form-control" %><br>
-  </div>
-  <div class="col-md-4">
-    <%= label_tag :sexo_del_paciente %><br>
-    <%= f.select :action, options_for_select([["Elegir Sexo", "Elegir Sexo"],["Hombre", "Hombre"],["Mujer","Mujer"]]), class: "form-control" %><br>
-  </div>
-  <div class="col-md-4">
-    <%= label_tag :servicio_de_atencion %><br>
-    <%= f.select :property_type, options_for_select([ ["Elegir Servicio de Atencion","Elegir Servicio"],["Consulta Externa","ConsultaExterna"],["Emergencia","Emergencia"],["Filtro","Filtro"]]), class: "form-control" %><br>
-  </div>
-    <div class="col-md-4">
-    <%= f.label :especialidad %><br>
-    <%= f.text_field :patio_deck, class: "form-control" %><br>
-  </div>
-  <div class="col-md-4">
-    <%= f.label :establecimiento %><br>
-    <%= f.text_field :realtoremail, class: "form-control" %><br>
-  </div>
-  <div class="col-md-4">
-    <%= f.label :tipo_establecimiento %><br>
-    <%= f.text_field :private_pool, class: "form-control" %><br>
-  </div>
+    <%= f.label :paciente %><br><br>
+    <%= f.number_field :zip_code, class: "form-control" %><br><br>
+  </div><br><br>
   <div class="col-md-4">
      <%= f.label :nil, "PROCEDENCIA" %><br>
     <%= label_tag :departamento %><br>
-    <%= f.select :area_tennis, options_for_select([["Elegir Departamento","Elegir Departamento"],["Copan","Copan"]]), class: "form-control" %><br>
-  </div>
+    <%= f.select :area_tennis, options_for_select([["Elegir Departamento","Elegir Departamento"],["Copan","Copan"]]), class: "form-control" %><br><br>
+  </div><br><br>
   <div class="col-md-4">
     <%= f.label :nil, "PROCEDENCIA" %><br>
     <%= label_tag :municipio %><br>
     <%= f.select :wheelchair, options_for_select([["Elegir Municipio","Elegir Municipio"],["San Nicolas","San Nicolas"],["La Entrada","La Entrada"],["Copan Ruinas","Copan Ruinas"],["El Paraiso","El Paraiso"]]), class: "form-control" %><br>
-  </div>
+  </div><br><br>
  <div class="col-md-4">
   <%= f.label :nil, "PROCEDENCIA" %><br>
     <%= f.label :localidad %><br>
     <%= f.text_field :city, class: "form-control" %><br>
-  </div> 
-   <div class="col-md-4">
+  </div><br><br>
+  <div class="col-md-4">
      <%= f.label :nil, "DIAGNOSTICO O ACTIVIDAD" %><br>
     <%= label_tag :condicion_1 %><br>
     <%= f.text_area :address, class: "form-control" %><br>
-  </div>
+  </div><br><br>
   <div class="col-md-4">
      <%= f.label :nil, "DIAGNOSTICO O ACTIVIDAD" %><br>
     <%= f.label :condicion_2 %><br>
     <%= f.text_area :additionalfeatures, class: "form-control" %><br>
-  </div>
+  </div><br><br>
   <div class="col-md-4">
     <%= f.label :nil, "DIAGNOSTICO O ACTIVIDAD" %><br>
     <%= f.label :condicion_3 %><br>
     <%= f.text_area :energy_features, class: "form-control" %><br>
-  </div>
+  </div><br><br>
   <div class="col-md-4">
     <%= f.label :nil, "REFERENCIA" %><br>
     <%= f.label :enviada_a %><br>
     <%= f.text_field :keymap, class: "form-control" %><br>
-  </div>
+  </div><br><br>
    <div class="col-md-4">
     <%= f.label :nil, "REFERENCIA" %><br>
     <%= f.label :recibida_de %><br>
     <%= f.text_field :elevator, class: "form-control" %><br>
-  </div> 
-   <div class="col-md-4">
-    <%= f.label :realtor_phone_number %><br>
-    <%= f.text_field :realtorphonenumber, class: "form-control" %><br>
-  </div>
-  
-  
- 
-  
-
- 
-   
-   <div class="col-md-4">
-    <%= f.label :green_certification %><br>
-    <%= f.select :green_certification, options_for_select([["YES","YES"],["NO","NO"]]), class: "form-control" %><br>
-  </div>
-   <div class="col-md-4">
-    <%= f.label :status %><br>
-    <%= f.select :status, options_for_select([["Any Status", "Any Status"],["Active","Active"],["Pending", "Pending"],["Pending Continue to Show", "Pending Continue to Show"],["Sold", "Sold"]]), class: "form-control" %><br>
-  </div>
-  
- 
+  </div><br><br>
   <div class="col-md-4">
-    <%= label_tag :Honduras_Area %><br>
-    <%= f.select :florida_mlsarea, options_for_select([["Norte", "Norte"],["Sur","Sur"],["Central", "Central"]]), class: "form-control" %><br><br>
-  </div>
+    <%= f.label :establecimiento %><br>
+    <%= f.text_field :realtoremail, class: "form-control" %><br>
+  </div><br>  
+  <div class="col-md-4">
+    <%= f.label :profesional_de_salud %><br>
+    <%= f.text_field :realtorname, class: "form-control" %><br>
+  </div><br>
+  <div class="col-md-4">
+    <%= f.label :codigo %><br>
+    <%= f.number_field :full_bathrooms, class: "form-control" %><br>
+  </div><br>
+  <div class="col-md-4">
+    <%= label_tag :nombre_personal_de_salud %><br>
+    <%= f.text_field :realorlicense, class: "form-control" %><br>
+  </div><br>
+  <div class="col-md-4">
+    <%= f.label :tipo_establecimiento %><br>
+    <%= f.text_field :private_pool, class: "form-control" %><br>
+  </div><br>
+  <div class="col-md-4">
+    <%= f.label :fecha %><br>
+    <%= f.date_field :status, class: "form-control" %><br>
+  </div><br>
   
+  <div class="col-md-4">
+    <%= label_tag :servicio_de_atencion %><br>
+    <%= f.select :property_type, options_for_select([ ["Elegir Servicio de Atencion","Elegir Servicio"],["Consulta Externa","ConsultaExterna"],["Emergencia","Emergencia"],["Filtro","Filtro"]]), class: "form-control" %><br>
+  </div><br>
+    <div class="col-md-4">
+    <%= f.label :especialidad %><br>
+    <%= f.text_field :patio_deck, class: "form-control" %><br>
+  </div><br>
   <br>
   <div class="col-md-4">
-   <%= label_tag :foto_del_paciente %><br>  <%= f.file_field :image, class: "form-control" %><br><br>
-  </div>
+   <%= label_tag :foto_del_paciente %><br>  <%= f.file_field :image, class: "form-control" %><br><br><br><br>
+  </div><br><br><br>
   <div class="col-md-4">
     <%= f.submit "Registrar Paciente en ATA", class: "btn btn-success" %><br>
   </div>

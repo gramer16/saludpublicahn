@@ -1,0 +1,16 @@
+report.start_new_page do |page|
+      @residentials.each do |residential|
+          page.item(:textcodigo).value residential.full_bathrooms
+          page.item(:textprofesional).value residential.realtorname
+          page.item(:textestablecimiento).value residential.realtoremail
+          page.item(:textnombre).value residential.realorlicense
+          page.item(:texttipoestable).value residential.private_pool
+          page.item(:textdeparta).value residential.area_tennis
+          page.item(:textfecha).value residential.status
+          page.item(:textmunicipio).value residential.wheelchair
+          page.item(:ce).value residential.property_type
+          page.item(:e).value residential.property_type
+          page.item(:f).value residential.property_type
+          page.item(:textespe).value residential.patio_deck
+end
+end 

@@ -1,4 +1,4 @@
-# coding: utf-8
+#' coding: utf-8
 
 require 'thinreports'
 
@@ -7,7 +7,7 @@ report = Thinreports::Report.new layout: 'Ata_2005'
 # 1st page
 report.start_new_page
 
-report.page.item(:textestablecimiento).value('Thinreports')
+report.page.item(:textestablecimiento).value(:address)
 report.page.item(:textprofesional).value('Thinreports')
 report.page.item(:textcodigo).value('Thinreports')
 report.page.item(:textnombre).value('Thinreports')
@@ -53,4 +53,4 @@ end
 
 report.generate(filename: 'Ata_2005.pdf')
 
-puts 'Done!'
+puts 'Done!

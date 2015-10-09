@@ -19,7 +19,7 @@
   
  </div>
  </div>            
- 
+ <br><br>
 <div class="center"> 
 <div class="row">
   <% @residentials.each do |residential| %>
@@ -27,29 +27,30 @@
     <div class="thumbnail">
       <%= link_to image_tag(residential.image.url), residential %>
       <div class="caption">
-        <h3><strong><%= residential.address %></strong></h3>
-          <h4><strong><th><th><%= label_tag :nil, t('price') %> </th> <%= number_to_currency(residential.price) %></strong></h4>
+        <h4><strong><%= label_tag :nil, "NOMBRE DEL PACIENTE" %></strong></h4>
+        <h3><strong><%= residential.construction_type %></strong></h3>
           <p>   <p><%= t('listed_by', user: residential.user.name) %></p>
-            <%= residential.property_type %><br>
-            <th><%= label_tag :nil, t('bedrooms') %></th>   <%= residential.bedrooms %><br>
-            <th><%= label_tag :nil, t('fullbathrooms') %></th>   <%= residential.full_bathrooms %><br>
-            <th><%= label_tag :nil, t('halfbathrooms') %></th>   <%= residential.half_bathrooms %><br>
-            <th><%= label_tag :nil, t('squarefeet') %></th> <%= residential.square_feet %><br>
-            <th><%= label_tag :nil, t('zipcode') %></th>    <%= residential.zip_code %><br>
-             <th><%= label_tag :nil, t('construction') %></th> <%= residential.construction_type %><br>
-             <th><%= label_tag :nil, t('city') %></th> <%= residential.city %><br>
-            <th><%= label_tag :nil, t('privatepool') %></th>    <%= residential.private_pool %><br>
-            <th><%= label_tag :nil, t('waterview') %></th> <%= residential.water_view %><br>
-            <th><%= label_tag :nil, t('golf') %></th> <%= residential.golf_course %><br>
-            <th><%= label_tag :nil, t('water') %></th> <%= residential.water_front %><br>
-           
-            <th><%= label_tag :Status, t('status') %></th> <%= residential.status %><br>
+            
+          <h5><strong><%= label_tag :nil, "NUMERO DE IDENTIDAD" %></h5></strong><h4><%= residential.mls_number %></h4><br>
+          <h5><strong><%= label_tag :nil, "SEXO DEL PACIENTE" %></strong></h5>
+          <h4><%= residential.action %></h4>
+          <h5><strong><%= label_tag :nil, "EDAD DEL PACIENTE" %></strong></h5>
+          <h4><%= residential.half_bathrooms %></h4>
+          <h5><strong><%= label_tag :nil, "MUNICIPIO" %></strong></h5>
+          <h4><%= residential.wheelchair %></h4>
+          <h5><strong><%= label_tag :nil, "DEPARTAMENTO" %></strong></h5>
+          <h4><%= residential.area_tennis %></h4>
+          <h5><strong><%= label_tag :nil, "SERVICIO DE ATENCION" %></strong></h5>
+          <h4><%= residential.property_type %></h4>
+          <h5><strong><%= label_tag :nil, "REFERENCIA ENVIADA A" %></strong></h5>
+          <h4><%= residential.keymap %></h4>
+            <br>
 
           </p>
-          <%= link_to 'Show', residential, class: "btn btn-success" %>
+          <%= link_to 'Show', residential, class: "btn btn-default" %>
           <% if (user_signed_in?) && (current_user == residential.user) %>
-          <%= link_to 'Edit', edit_residential_path(residential), class: "btn btn-warning" %>
-          <%= link_to 'Delete', residential, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+          <%= link_to 'Edit', edit_residential_path(residential), class: "btn btn-default" %>
+          <%= link_to 'Delete', residential, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
            <% end %>
  </div>
     </div>
@@ -62,7 +63,8 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to t('new_residential'), new_residential_path, class: "btn btn-success" %>
+<%= link_to t('new_residential'), new_residential_path, class: "btn btn-success" %><br><br><br>
+<center><%= link_to 'Imprimir Reporte ATA', residentials_path(format: 'pdf'), class: "btn btn-primary" %></center><br>
 <% end %>
 <br>
 

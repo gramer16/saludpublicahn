@@ -25,7 +25,14 @@ class ResidentialsController < ApplicationController
   
   def index
     @residentials = Residential.all
+     respond_to do |format|
+      format.html # index.html.erb
+      #format.json { render json: @residentials }
 
+      # Example: Basic Usage
+      #format.pdf {send_data render_to_string, filename: 'Ata_2005', type: 'application/pdf', disposition: 'attachment'}
+      format.pdf { render_residential_list(@residentials) }
+    end
   end
   #def index
   #@search = Residential.search(params[:q])
@@ -35,6 +42,7 @@ class ResidentialsController < ApplicationController
   # GET /residentials/1
   # GET /residentials/1.json
   def show
+    
   end
 
   # GET /residentials/new
@@ -91,6 +99,7 @@ class ResidentialsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_residential
@@ -99,7 +108,7 @@ class ResidentialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def residential_params
-      params.require(:residential).permit(:mls_number, :action, :address, :property_type, :bedrooms, :full_bathrooms, :half_bathrooms, :square_feet, :price, :zip_code, :lot_size, :garage, :construction_type, :stories, :year_built, :private_pool, :area_tennis, :wheelchair, :elevator, :patio_deck, :energy_features, :green_certification, :golf_course, :water_view, :water_front, :foreclosure, :status, :city, :florida_mlsarea, :realorlicense, :realtorname, :realtorphonenumber, :realtoremail, :additionalfeatures, :maintenancefee, :keymap, :realorlicense, :image)
+      params.require(:residential).permit(:bedrooms, :construction_type, :mls_number, :action, :green_certification, :half_bathrooms, :square_feet, :lot_size, :zip_code, :area_tennis, :wheelchair, :city, :address, :additionalfeatures, :energy_features, :keymap, :elevator, :realtoremail, :realtorname, :full_bathrooms, :realorlicense, :private_pool, :status, :property_type, :patio_deck, :image)
     end
 
     def check_user
@@ -107,4 +116,71 @@ class ResidentialsController < ApplicationController
         redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
       end
     end
+
+     def render_residential_list(residentials)
+    report = ThinReports::Report.new layout: File.join(Rails.root, 'app', 'reports', 'residentials.tlf')
+    
+
+    report.start_new_page do |page|
+       @residentials.each do |residential|
+
+          page.item(:textcodigo).value residential.full_bathrooms
+          page.item(:textprofesional).value residential.realtorname
+          page.item(:textestablecimiento).value residential.realtoremail
+          page.item(:textnombre).value residential.realorlicense
+          page.item(:texttipoestable).value residential.private_pool
+          page.item(:textdeparta).value residential.area_tennis
+          page.item(:textfecha).value residential.status
+          page.item(:textmunicipio).value residential.wheelchair
+          page.item(:ce).value residential.property_type
+          page.item(:e).value residential.property_type
+          page.item(:f).value residential.property_type
+          page.item(:textespe).value residential.patio_deck
+         report.page.residential(:residential).add_row do |row|
+          row.item(:texthc).value residential.bedrooms
+          page.item(:textnombreapellido).value residential.construction_type
+          page.item(:textidentidad).value residential.mls_number
+          page.item(:textsexo).value residential.action
+          page.item(:textfechanaci).value residential.green_certification
+          page.item(:texta).value residential.half_bathrooms
+          page.item(:textm).value residential.square_feet
+          page.item(:textd).value residential.lot_size
+          page.item(:textpaci).value residential.zip_code
+          page.item(:textdeparta1).value residential.area_tennis
+          page.item(:textmunicipio1).value residential.wheelchair
+          page.item(:textlocalidad1).value residential.city
+          page.item(:textcondi1).value residential.address
+          page.item(:textcondi2).value residential.additionalfeatures
+          page.item(:textcondi3).value residential.energy_features
+          page.item(:textenviada).value residential.keymap
+          page.item(:textrecibida).value residential.elevator
+       end
+
+      
+
+          page.item(:texthc1).value residential.bedrooms
+          page.item(:textnombreapellido2).value residential.construction_type
+          page.item(:textidentidad1).value residential.mls_number
+          page.item(:textsexo1).value residential.action
+          page.item(:textfechanaci1).value residential.green_certification
+          page.item(:texta1).value residential.half_bathrooms
+          page.item(:textm1).value residential.square_feet
+          page.item(:textd1).value residential.lot_size
+          page.item(:textpaci1).value residential.zip_code
+          page.item(:textdeparta2).value residential.area_tennis
+          page.item(:textmunicipio2).value residential.wheelchair
+          page.item(:textlocalidad2).value residential.city
+          page.item(:textcondi12).value residential.address
+          page.item(:textcondi21).value residential.additionalfeatures
+          page.item(:textcondi32).value residential.energy_features
+          page.item(:textenviada1).value residential.keymap
+          page.item(:textrecibida1).value residential.elevator
+       end
 end
+
+    send_data report.generate, filename: 'Ata_2005.pdf', 
+                               type: 'application/pdf', 
+                               disposition: 'attachment'
+  
+end
+end 
